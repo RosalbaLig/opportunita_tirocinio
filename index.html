@@ -1,111 +1,149 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opportunità di Tirocinio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        .filter-container {
-            margin: 20px 0;
-        }
-        .filter-container select {
-            padding: 10px;
-            font-size: 16px;
-        }
-        .content-block {
-            display: flex;
-            align-items: center;
-            margin: 20px 0;
-            border: 1px solid #ccc;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .content-block img {
-            width: 100px;
-            height: auto;
-            margin-right: 20px;
-        }
-        .content-block .info {
-            flex: 1;
-        }
-        .content-block .opportunities {
-            margin-top: 10px;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Opportunità di Tirocinio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .filter-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .filter-container select {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .table-container {
+      width: 100%;
+      border-collapse: collapse;
+      display: table;
+    }
+
+    .table-header, .content-row {
+      display: table-row;
+    }
+
+    .table-header div, .content-cell {
+      display: table-cell;
+      vertical-align: top;
+      padding: 15px;
+      border: 1px solid #ccc;
+    }
+
+    .table-header {
+      background-color: #f0f0f0;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .logo img {
+      width: 100px;
+      height: auto;
+    }
+
+    .text-box h2 {
+      margin: 0;
+    }
+
+    .text-box p {
+      margin: 5px 0 0 0;
+    }
+
+    .content-row.hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-    <h1>Elenco delle Opportunità di Tirocinio</h1>
+  <h1>Elenco delle Opportunità di Tirocinio</h1>
 
-    <!-- Filtro per area didattica -->
-    <div class="filter-container">
-        <label for="area-filter">Filtra per Area Didattica:</label>
-        <select id="area-filter">
-            <option value="all">Tutte le aree</option>
-            <option value="CODIMEG">CODIMEG</option>
-            <option value="CODIC">CODIC</option>
-            <option value="CODELE">CODELE</option>
-        </select>
+  <!-- Filtro per area didattica -->
+  <div class="filter-container">
+    <label for="area-filter">Filtra per Area Didattica:</label>
+    <select id="area-filter">
+      <option value="all">Tutte le aree</option>
+      <option value="CODIMEG">CODIMEG</option>
+      <option value="CODIC">CODIC</option>
+      <option value="CODELE">CODELE</option>
+    </select>
+  </div>
+
+  <!-- Tabella a 3 colonne -->
+  <div class="table-container">
+    <!-- Intestazione -->
+    <div class="table-header">
+      <div>Logo</div>
+      <div>Azienda</div>
+      <div>Opportunità</div>
     </div>
 
-    <!-- Blocco 1: ARES s.r.l. -->
-    <div class="content-block" data-areas="CODIMEG">
+    <!-- Riga 1: ARES -->
+    <div class="content-row" data-areas="CODIMEG">
+      <div class="content-cell logo">
         <a href="xxx1" target="_blank">
-            <img src="logo_ares.png" alt="ARES s.r.l.">
+          <img src="logo_ares.png" alt="ARES s.r.l.">
         </a>
-        <div class="info">
-            <h2><a href="yyy1" target="_blank">ARES s.r.l.</a></h2>
-            <p>Start-up innovativa nel settore energetico</p>
-            <div class="opportunities">
-                <h3>Opportunità:</h3>
-                <ul>
-                    <li>Progettazione e realizzazione di componenti per il settore energetico (Prof. Maiorino)</li>
-                </ul>
-            </div>
-        </div>
+      </div>
+      <div class="content-cell text-box">
+        <h2><a href="yyy1" target="_blank">ARES s.r.l.</a></h2>
+        <p>Start-up innovativa nel settore energetico</p>
+      </div>
+      <div class="content-cell opportunity-box">
+        <ul>
+          <li>Progettazione e realizzazione di componenti per il settore energetico (Prof. Maiorino)</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Blocco 2: ENEA -->
-    <div class="content-block" data-areas="CODELE,CODIC">
+    <!-- Riga 2: ENEA -->
+    <div class="content-row" data-areas="CODELE,CODIC">
+      <div class="content-cell logo">
         <a href="xxx2" target="_blank">
-            <img src="logo_enea.png" alt="ENEA">
+          <img src="logo_enea.png" alt="ENEA">
         </a>
-        <div class="info">
-            <h2><a href="yyy2" target="_blank">ENEA</a></h2>
-            <p>Agenzia nazionale per le nuove tecnologie, l’energia e lo sviluppo economico sostenibile</p>
-            <div class="opportunities">
-                <h3>Opportunità:</h3>
-                <ul>
-                    <li>Progettazione di smart grid (Prof. Liguori)</li>
-                    <li>Sviluppo di materiali per energie rinnovabili (Prof. Liparoti)</li>
-                </ul>
-            </div>
-        </div>
+      </div>
+      <div class="content-cell text-box">
+        <h2><a href="yyy2" target="_blank">ENEA</a></h2>
+        <p>Agenzia nazionale per le nuove tecnologie, l’energia e lo sviluppo economico sostenibile</p>
+      </div>
+      <div class="content-cell opportunity-box">
+        <ul>
+          <li>Progettazione di smart grid (Prof. Liguori)</li>
+          <li>Sviluppo di materiali per energie rinnovabili (Prof. Rossi)</li>
+        </ul>
+      </div>
     </div>
+  </div>
 
-    <script>
-        // Funzione per filtrare i blocchi di contenuto in base all'area selezionata
-        document.getElementById('area-filter').addEventListener('change', function() {
-            const selectedArea = this.value;
-            const blocks = document.querySelectorAll('.content-block');
+  <script>
+    // Filtro per area didattica
+    document.getElementById('area-filter').addEventListener('change', function () {
+      const selectedArea = this.value;
+      const rows = document.querySelectorAll('.content-row');
 
-            blocks.forEach(block => {
-                const areas = block.getAttribute('data-areas').split(',');
-                if (selectedArea === 'all' || areas.includes(selectedArea)) {
-                    block.classList.remove('hidden');
-                } else {
-                    block.classList.add('hidden');
-                }
-            });
-        });
-    </script>
+      rows.forEach(row => {
+        const areas = row.getAttribute('data-areas').split(',');
+        if (selectedArea === 'all' || areas.includes(selectedArea)) {
+          row.classList.remove('hidden');
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
